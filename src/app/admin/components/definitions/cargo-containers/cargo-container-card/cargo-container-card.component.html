@@ -1,0 +1,18 @@
+<div class="row">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex. 40 DC" #txtName>
+    </mat-form-field>
+</div>
+<div class="row">
+    <mat-form-field class="example-full-width">
+        <mat-label>Teu</mat-label>
+        <input matInput type="number" min="0" value="0" #txtTeu>
+    </mat-form-field>
+</div>
+
+<button mat-raised-button class="btn" color="accent" (click)="create(txtName,txtTeu)">Save</button>
+
+<hr />
+
+<app-file-upload [options]="fileUploadOptions"></app-file-upload>

@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+
+    <div class="grid-container">
+        <h1 class="mat-h1">Containers</h1>
+    </div>
+
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="teu">
+            <th mat-header-cell *matHeaderCellDef> Teu </th>
+            <td mat-cell *matCellDef="let element"> {{element.teu}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef> Created Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="document">
+            <th mat-header-cell *matHeaderCellDef width="20"> </th>
+            <td mat-cell *matCellDef="let element"> <img style="cursor: pointer;" (click)="addDocuments(element.id)"
+                    src="../../../../../assets/document.png" width="20px" height="20px" /></td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef width="20"> </th>
+            <td mat-cell *matCellDef="let element"> <img style="cursor: pointer;" src="../../../../../assets/edit.png"
+                    width="20px" height="20px" /></td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef width="20"> </th>
+            <td mat-cell *matCellDef="let element" appDelete [id]="element.id" (callback)="getCargoContainer()"
+                controller="cargoContainers" formName="Cargo Container"></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator (page)="pageChanged()" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>

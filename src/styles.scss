@@ -1,0 +1,6 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+label.neuron-required::after {
+    content: "*";
+    color: red;
+  }

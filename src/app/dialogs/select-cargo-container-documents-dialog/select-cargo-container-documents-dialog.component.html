@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Upload Cantainer File</h2>
+<mat-dialog-content class="mat-typography">
+    <app-file-upload [options]="options"></app-file-upload>
+
+    <mat-card-header></mat-card-header>
+    <mat-card class="card-style" *ngFor="let file of files">
+        <mat-card-content>Simple card</mat-card-content>
+        <img mat-card-image [src]="file.path">
+        <mat-card-actions>
+            <button mat-button style="background-color: chocolate;color: wheat;"
+                (click)="deleteDocument(file.id)">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

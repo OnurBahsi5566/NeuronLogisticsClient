@@ -1,0 +1,8 @@
+<mat-drawer-container class="cargoContainer-froms-container">
+    <mat-drawer mode="side" opened>
+        <app-cargo-container-card (createdCargoContainer)="createdCargoContainer($event)"></app-cargo-container-card>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-cargo-container-list></app-cargo-container-list>
+    </mat-drawer-content>
+</mat-drawer-container>

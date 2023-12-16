@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" class="border p-3 rounded-3 mt-5">
+            <div class="col-auto">
+                <div class="col text-center p-2 bg-light">
+                    <span class="fs-3">Register</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-3">
+                    <label for="firstName" class="neuron-required">FirstName</label>
+                    <input type="text" class="form-control" formControlName="firstName" id="firstName"
+                        placeholder="FirstName">
+                    <div class="form-text text-danger" *ngIf="registerForm.get('firstName').hasError('required') && 
+                (registerForm.get('firstName').touched || registerForm.get('firstName').dirty)">
+                        FirstName is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <label for="lastName" class="neuron-required">LastName</label>
+                    <input type="text" class="form-control" formControlName="lastName" id="lastName"
+                        placeholder="LastName">
+                    <div class="form-text text-danger" *ngIf="registerForm.get('lastName').hasError('required') && 
+                (registerForm.get('lastName').touched || registerForm.get('lastName').dirty)">
+                        LastName is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="userName" class="neuron-required">Username</label>
+                <input type="text" class="form-control" formControlName="userName" id="userName" placeholder="Username">
+                <div class="form-text text-danger" *ngIf="registerForm.get('userName').hasError('required') && 
+                (registerForm.get('userName').touched || registerForm.get('userName').dirty)">
+                    Username is required.
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="email" class="neuron-required">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="email"
+                    placeholder="email@example.com">
+                <div class="form-text text-danger" *ngIf="registerForm.get('email').hasError('required') && 
+                (registerForm.get('email').touched || registerForm.get('email').dirty)">
+                    Email is required.
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="password" class="neuron-required">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="password"
+                    placeholder="Password">
+                <div class="form-text text-danger" *ngIf="registerForm.get('password').hasError('required') && 
+                (registerForm.get('password').touched || registerForm.get('password').dirty)">
+                    Password is required.
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="passwordConfirm">Password Confirm</label>
+                <input type="password" class="form-control" formControlName="passwordConfirm" id="passwordConfirm"
+                    placeholder="Password Confirm">
+            </div>
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid mt-3">
+                        <button type="submit" [disabled]="registerForm.invalid"
+                            class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-3">
+                    <span class="me-2">Already have Account</span><a routerLink="/login">Log in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>

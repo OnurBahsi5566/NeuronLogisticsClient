@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="border p-3 rounded-3 mt-5">
+            <div class="col-auto">
+                <div class="col text-center p-2 bg-light">
+                    <span class="fs-3">Log in</span>
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="userNameOrEmail" class="neuron-required">Username</label>
+                <input type="text" class="form-control" formControlName="userNameOrEmail" id="userNameOrEmail"
+                    placeholder="email@example.com">
+                <div class="form-text text-danger" *ngIf="loginForm.get('userNameOrEmail').hasError('required') && 
+                (loginForm.get('userNameOrEmail').touched || loginForm.get('userNameOrEmail').dirty)">
+                    Username is required.
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <label for="password" class="neuron-required">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="password"
+                    placeholder="Password">
+                <div class="form-text text-danger" *ngIf="loginForm.get('password').hasError('required') && 
+                (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                    Password is required.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-3">
+                    <div class="col-2 offset-3">
+                        <div class="d-grid mt-2">
+                            <asl-google-signin-button></asl-google-signin-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid mt-3">
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Log in</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-3">
+                    <span class="me-2">Don't have Account</span><a routerLink="/register">Register</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
