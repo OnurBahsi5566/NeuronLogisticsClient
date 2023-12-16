@@ -8,7 +8,7 @@ Dialog Service,
 
 File Upload Service,
 
-Authorized,
+Authentication,
 
 Social-Login,
 
