@@ -25,6 +25,7 @@ const routes: Routes = [
           import(
             './admin/components/definitions/cargo-containers/cargo-containers.module'
           ).then((module) => module.CargoContainersModule),
+        canActivate: [authGuard],
       },
       {
         path: 'vessels',
