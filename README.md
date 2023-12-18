@@ -13,3 +13,7 @@ Authentication,
 Social-Login,
 
 Lazy Load,
+
+Custom Http Error Interceptor,
+
+SignalR
